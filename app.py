@@ -2,7 +2,7 @@
 
 import textwrap
 
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from six.moves.BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
 
 class HelloRequestHandler(BaseHTTPRequestHandler):
