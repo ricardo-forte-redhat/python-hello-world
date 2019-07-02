@@ -16,7 +16,7 @@ class HelloRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
         response_text = """<html>
-                               <head>￿
+                               <head>
                                    <title>Python Hello World!</title>
                                </head>
                                <body>
