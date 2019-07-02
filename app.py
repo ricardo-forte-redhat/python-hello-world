@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import textwrap
+import textwrap, os
 
 from six.moves.BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
@@ -37,14 +37,11 @@ class HelloRequestHandler(BaseHTTPRequestHandler):
                                 <body>
                                     <h3>Python Hello World!</h3>
                                     <br/>
-                                    My hostname is "￿￿""
-                     
-         response_text = response_text + os.environ.get('HOSTNAME')
+                                    My hostname is """
+
+        response_text = response_text + os.environ.get('HOSTNAME')
           
-         response_text = response_text + ￿"</body></html>￿"
-        
-        
-        
+        response_text = response_text + "</body></html>￿"
         
         self.wfile.write(response_text.encode('utf-8'))
 
