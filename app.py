@@ -14,17 +14,38 @@ class HelloRequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/html; charset=utf-8')
         self.end_headers()
-        response_text = textwrap.dedent('''\
-            <html>
-            <head>
-                <title>Greetings to the world</title>
-            </head>
-            <body>
-                <h1>Greetings to the world</h1>
-                <p>Hello, world!</p>
-            </body>
-            </html>
-        ''')
+
+
+
+        # response_text = textwrap.dedent('''\
+        #     <html>
+        #     <head>
+        #         <title>Greetings to the world</title>
+        #     </head>
+        #     <body>
+        #         <h1>Greetings to the world</h1>
+        #         <p>Hello, world!</p>
+        #     </body>
+        #     </html>
+        # ''')
+
+
+        response_text = """ <html>
+                            ￿    <head>￿￿
+                                    <title>Python Hello World!</title>
+                                </head>
+                                <body>
+                                    <h3>Python Hello World!</h3>
+                                    <br/>
+                                    My hostname is "￿￿""
+                     
+         response_text = response_text + os.environ.get('HOSTNAME')
+          
+         response_text = response_text + ￿"</body></html>￿"
+        
+        
+        
+        
         self.wfile.write(response_text.encode('utf-8'))
 
 
